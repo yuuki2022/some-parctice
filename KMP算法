@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+using namespace std;
+
+int  KMB(const char* test,const char* son) {
+	vector<int> next(strlen(son),0);
+	next[0] = -1;
+	next[1] = 0;
+
+	//计算next数组的值
+	for (int i = 2; i < next.size(); ++i) {
+		int num = 0;
+		for (int j = 1; j < i ;) {
+			if (son[j] == son[num]) {
+				++num;
+				++j;
+			}
+			else {
+				j = j - num + 1;
+				num = 0;
+			}
+		}
+		next[i] = num;
+	}
+	for (int x : next) {
+		cout << x << " ";
+	}
+
+	for (int i = 0; i < strlen(test); ++i) {
+		for (int j = 0; j < strlen(son)&& i < strlen(test);) {
+			if (j==-1 || test[i] == son[j]) {
+				++j; ++i;
+				if (j == strlen(son)) {
+					return i - j + 1;
+				}
+			}
+			else {
+				j = next[j];
+			}
+		}
+	}
+	
+	return -1;
+	
+}
+
+int main() {
+
+	 cout << KMB("acabaabaabcacaabc", "abaabcac");
+	return 0;
+}
