@@ -1,0 +1,7 @@
+﻿  huffTree.cpp
+E:\程序样品\huffTree\huff.h(43,29): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+E:\程序样品\huffTree\huff.h(50,49): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+E:\程序样品\huffTree\huff.h(51,49): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+E:\程序样品\huffTree\huff.h(60,10): error C2082: 形参“n”的重定义
+E:\程序样品\huffTree\huffTree.cpp(24,34): error C2660: “huffCodeTranslation”: 函数不接受 2 个参数
+E:\程序样品\huffTree\huff.h(59,6): message : 参见“huffCodeTranslation”的声明
